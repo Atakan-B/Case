@@ -1,0 +1,55 @@
+package firstcase;
+
+public class Employee {
+
+    public String name;
+    public double salary;
+    public int workHours;
+    public int hireYear;
+
+    public Employee(String name, double salary, int workHours, int hireYear) {
+        this.name = name;
+        this.salary = salary;
+        this.workHours = workHours;
+        this.hireYear = hireYear;
+    }
+
+    public void tax(){
+
+        if(salary>1000){
+            salary = salary-(salary*(0.03));
+        }
+
+    }
+
+    public void bonus(){
+
+        int bonus = 0;
+        if(workHours > 40){
+            bonus = (workHours-40)*30;
+            salary = salary + (4*bonus);
+        }
+
+    }
+
+    public void raiseSalary(){
+
+        if((2021-hireYear) < 10){
+            salary = salary+(salary*0.05);
+        }
+        else if((2021-hireYear)>9 && (2021-hireYear)<20){
+            salary = salary+(salary*0.1);
+        }
+        else if((2021-hireYear)>19){
+            salary = salary+(salary*0.15);
+        }
+
+    }
+
+    @Override
+    public String toString() {
+
+        return "Name: "+name+"\nSalary: "+salary+"\nWork Hours: "+workHours+"\nHire Year: "+hireYear;
+    }
+    
+}
